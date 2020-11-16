@@ -207,12 +207,6 @@ grad_clip = 0.1
 weight_decay = 1e-4
 opt_func = torch.optim.Adam
 
-# Commented out IPython magic to ensure Python compatibility.
-# %%time
-# history = fit_one_cycle(epochs, max_lr, model, train_dl, valid_dl, 
-#                              grad_clip=grad_clip, 
-#                              weight_decay=weight_decay, 
-#                              opt_func=opt_func)
 
 def plot_accuracies(history):
     accuracies = [x['val_acc'] for x in history]
@@ -231,5 +225,5 @@ def plot_losses(history):
     plt.legend(['Training', 'Validation'])
     plt.title('Loss vs. No. of epochs');
 
-torch.save(model.state_dict(), 'cifar10-resnet9.pth')
+torch.save(model.state_dict(), 'resnet.pth')
 
